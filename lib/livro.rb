@@ -2,24 +2,19 @@ class Livro
 	# encoding: utf-8
 
 	attr_accessor :valor
+	attr_reader :categoria
 
-	def initialize(autor, isbn = '1',numero_de_paginas, preco)
+	def initialize(autor, isbn = '1',numero_de_paginas, valor, categoria)
+
 		@autor = autor
 	 	@isbn = isbn
 		@numero_de_paginas = numero_de_paginas
 		@valor = valor
+		@categoria = categoria
 	end
 
 	def  to_s
-		"Autor: #{@autor}, Isbn: #{@isbn}, Páginas: #{@numero_de_paginas}"
-	end
-
-	def valor
-		@valor
-	end
-
-	def valor=(valor)
-		@valor = valor
+		"Autor: #{@autor}, Isbn: #{@isbn}, Páginas: #{@numero_de_paginas}, Categoria: #{@categoria}"
 	end
 
 end
