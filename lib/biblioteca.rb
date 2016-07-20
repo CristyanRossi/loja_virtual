@@ -2,6 +2,7 @@ class Biblioteca
 	# encoding: utf-8
 
 	attr_reader :livros
+	attr_reader :autor
 
 	def initialize
 		@livros = {}
