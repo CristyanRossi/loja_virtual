@@ -6,6 +6,7 @@ class Biblioteca
 
 	def initialize
 		@livros = {}
+		@banco_de_arquivos = BancoDeArquivos.new
 	end
 
 	def adiciona(livro)
@@ -21,5 +22,12 @@ class Biblioteca
 		@livros[categoria].each do |livro|
 			yield livro if block_given?
 		end
+	end
+
+	private
+
+	def salva(livro)
+		@banco_de_arquivos.salva livro
+		yield
 	end
 end
