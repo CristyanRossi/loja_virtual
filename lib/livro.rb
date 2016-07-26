@@ -1,4 +1,4 @@
-class Livro
+class Livro < Midia
 	# encoding: utf-8
 	require 'set'
 
@@ -13,6 +13,7 @@ class Livro
 		@numero_de_paginas = numero_de_paginas
 		@valor = valor
 		@categoria = categoria
+		@desconto = 0.8
 	end
 
 	def  to_s
