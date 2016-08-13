@@ -1,4 +1,8 @@
-class Biblioteca
+module VendaFacil
+
+include Enumerable
+
+class Set
 	# encoding: utf-8
 
 	def initialize
@@ -19,8 +23,18 @@ class Biblioteca
 		@livros ||= @banco_de_arquivos.carrega
 	end
 
+	def each
+		Livros.each { |livro| yield livro }
+	end
+
+	private
+
 	def salva(livro)
 		@banco_de_arquivos.salva livro
 		yield
 	end
+
+
+end
+
 end

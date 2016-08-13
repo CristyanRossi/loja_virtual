@@ -2,9 +2,11 @@ class Livro < Midia
 	# encoding: utf-8
 	require 'set'
 
+
 	attr_accessor :valor
 	attr_reader :categoria, :autor, :isbn, :titulo
 
+	include FormatadorMoeda
 
 	def initialize(titulo, autor, isbn = '1', numero_de_paginas, valor, categoria)
 		@titulo = titulo
